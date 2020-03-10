@@ -1,27 +1,26 @@
 package datasource.model;
 
-//import javax.persistence.Column;
-//import javax.persistence.Id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-//@Entity(name = "Produtos")
+@Entity(name="Order")
 public class Order {
-//	@Id
+	@Id
 	private long idProduto;
-	private String endereco;
-//	@Column(name = "ID_Product");
-	private double valor;
-	//@Column(name = "ID_Cliente")
+	@Column(name="ID_Cliente")
 	private long idCliente;
+	@Column(name="Endereço: ")
+	private String endereco;
+	@Column(name="Valor")
+	private double valor;
 	
-	
-	
-	public Order(long idProduto, double valor, String endereco, long idCliente) {
+	public Order(long idProduto, long idCliente, String endereco, double valor) {
 		super();
 		this.idProduto = idProduto;
+		this.idCliente = idCliente;
 		this.endereco = endereco;
 		this.valor = valor;
-		this.idCliente = idCliente;
-		
 	}
 	
 	public long getIdProduto() {
@@ -30,24 +29,24 @@ public class Order {
 	public void setIdProduto(long idProduto) {
 		this.idProduto = idProduto;
 	}
+	public long getIdCliente() {
+		return idCliente;
+	}
+	public void setIdCliente(long idCliente) {
+		this.idCliente = idCliente;
+	}
 	public String getEndereco() {
 		return endereco;
 	}
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-
 	public double getValor() {
 		return valor;
 	}
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	public long getIdCliente() {
-		return idCliente;
-	}
-	public void setidCliente(long idCliente) {
-		this.idCliente = idCliente;
-	}
+	
 	
 }
