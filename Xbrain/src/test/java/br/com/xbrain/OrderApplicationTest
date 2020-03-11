@@ -1,4 +1,4 @@
-import br.com.xbrain;
+package br.com.xbrain;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
